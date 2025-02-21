@@ -70,7 +70,7 @@ interface AbleToTow {
           name: 'vehicleType',
           message: 'Select a vehicle type',
           // TODO: Update the choices array to include Truck and Motorbike
-          choices: ['Car'],
+          choices: ['Car, Truck, Motorbike'],
         },
       ])
       .then((answers) => {
@@ -79,6 +79,11 @@ interface AbleToTow {
           this.createCar();
         }
         // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
+        if (answers.vehicleType === 'Truck') {
+          this.createTruck();
+        }
+        if (answers.vehicleType === 'Motorbike') {
+          this.createMotorbike();
       });
   }
 
