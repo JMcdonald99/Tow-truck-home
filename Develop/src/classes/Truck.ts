@@ -44,18 +44,16 @@ class Truck extends Vehicle implements AbleToTow {
     } else {
       this.wheels = wheels;
     }
+  }
 
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
-    const vehicleMakeModel = `${vehicle.make} ${vehicle.model}`;
-    if (vehicle.weight <= this.towingCapacity) {
+    const vehicleMakeModel = `${Vehicle.make} ${Vehicle.model}`;
+    if (Vehicle.weight <= this.towingCapacity) {
       console.log(`Towing ${vehicleMakeModel}`);
     } else {
       console.log(`${vehicleMakeModel} is too heavy to be towed`);
     }
-  }
-  tow(vehicle: Truck | Motorbike | Car): void {
-    throw new Error('Method not implemented.');
   }
 
   // TODO: Override the printDetails method from the Vehicle class
@@ -70,10 +68,11 @@ class Truck extends Vehicle implements AbleToTow {
     console.log(`Color: ${this.color}`);
     console.log(`Towing Capacity: ${this.towingCapacity}`);
     console.log(`Wheels: ${this.wheels.length}`);
+  }
 }
 
-// Remove duplicate tow method
-  }
+// Export the Truck class as the default export
+export default Truck;
 // Export the Truck class as the default export
 export default Truck;
 function tow(vehicle: any, arg1: number) {
